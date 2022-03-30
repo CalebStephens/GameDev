@@ -32,7 +32,7 @@ public class MoveEnemy : MonoBehaviour
         {
             currentWaypoint++;
             lastWaypointSwitchTime = Time.time;
-            // TODO: Rotate into move direction
+            RotateIntoMoveDirection();
         }
         else
         {
@@ -40,8 +40,23 @@ public class MoveEnemy : MonoBehaviour
 
             AudioSource audioSource = gameObject.GetComponent<AudioSource>();
             AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-            // TODO: deduct health
+            GameManagerBehaviour gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehaviour>();
+            gameManager.Health -= 1;
         }
         }
+    }
+
+    private void RotateIntoMoveDirection()
+    {
+        Vector3 newStartPosition = waypoints [currentWaypoint].transform.position;
+        Vector3 newEndPosition = waypoints [currentWaypoint + 1].transform.position;
+        Vector3 newDirection = (newEndPosition - newStartPosition);
+
+        float x = newDirection.x;
+        float y = newDirection.y;
+        float rotationAngle = Mathf.Atan2 (y, x) * 180 / Mathf.PI;
+
+        GameObject sprite = gameObject.transform.Find("Sprite").gameObject;
+        sprite.transform.rotation = Quaternion.AngleAxis(rotationAngle, Vector3.forward);
     }
 }
