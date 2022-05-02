@@ -38,8 +38,8 @@ public class SpawnEnemy : MonoBehaviour
         {
             float timeInterval = Time.time - lastSpawnTime;
             float spawnInterval = waves[currentWave].spawnInterval;
-            if (((enemiesSpawned == 0 && timeInterval > timeBetweenWaves) || (timeInterval > spawnInterval)) && 
-            (enemiesSpawned < waves[currentWave].maxEnemies))
+            if (((enemiesSpawned == 0 && timeInterval > timeBetweenWaves) || (enemiesSpawned != 0 && timeInterval > spawnInterval)) && 
+    (enemiesSpawned < waves[currentWave].maxEnemies))
             {
                 lastSpawnTime = Time.time;
                 GameObject newEnemy = (GameObject)Instantiate(waves[currentWave].enemyPrefab);
