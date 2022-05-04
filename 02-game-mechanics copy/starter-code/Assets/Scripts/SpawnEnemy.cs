@@ -19,6 +19,8 @@ public class SpawnEnemy : MonoBehaviour
     public Wave[] waves;
     public int timeBetweenWaves = 5;
 
+    public List<GameObject> enemiesList;
+
     private GameManagerBehaviour gameManager;
 
     private float lastSpawnTime;
@@ -28,6 +30,9 @@ public class SpawnEnemy : MonoBehaviour
     {
         lastSpawnTime = Time.time;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehaviour>();
+
+        //creates a list with all the enemy prefabs in the resources folder "Enemy"
+        enemiesList = new List<GameObject>(Resources.LoadAll<GameObject>("Enemy"));
     }
 
     // Update is called once per frame
@@ -41,10 +46,18 @@ public class SpawnEnemy : MonoBehaviour
             if (((enemiesSpawned == 0 && timeInterval > timeBetweenWaves) || (enemiesSpawned != 0 && timeInterval > spawnInterval)) && 
     (enemiesSpawned < waves[currentWave].maxEnemies))
             {
-                lastSpawnTime = Time.time;
-                GameObject newEnemy = (GameObject)Instantiate(waves[currentWave].enemyPrefab);
-                newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
-                enemiesSpawned++;
+                //Spawns second type of enemy after the third wave 
+                if(currentWave < 3){
+                    lastSpawnTime = Time.time;
+                    GameObject newEnemy = (GameObject)Instantiate(enemiesList[0]);
+                    newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+                    enemiesSpawned++;
+                }else{
+                    lastSpawnTime = Time.time;
+                    GameObject newEnemy = (GameObject)Instantiate(enemiesList[1]);
+                    newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+                    enemiesSpawned++;
+                }
             }
             if (enemiesSpawned == waves[currentWave].maxEnemies && GameObject.FindGameObjectWithTag("Enemy") == null)
             {
