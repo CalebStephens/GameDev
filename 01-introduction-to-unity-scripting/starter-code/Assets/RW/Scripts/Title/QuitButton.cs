@@ -9,6 +9,6 @@ public class QuitButton : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData) 
     {
        Application.Quit();
-       Debug.Log("hi");
+       
     }
 }
