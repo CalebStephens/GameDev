@@ -10,7 +10,7 @@ public class SheepSpawner : MonoBehaviour
     public GameObject sheepPrefab; 
     public List<Transform> sheepSpawnPositions = new List<Transform>(); 
     public float timeBetweenSpawns; 
-    public float increment = .50f;
+    public float increment;
 
     private List<GameObject> sheepList = new List<GameObject>(); 
     // Start is called before the first frame update
@@ -39,10 +39,11 @@ public class SheepSpawner : MonoBehaviour
         {
             SpawnSheep(); 
             yield return new WaitForSeconds(timeBetweenSpawns); 
-            if(timeBetweenSpawns > 1){
+            /* Everytime a sheep is spawned time between spawns is shortened to what is set in unity
+                until timeBetween spawns is equal to 2 seconds */
+            if(timeBetweenSpawns > 2){
                 timeBetweenSpawns -= increment;
             }
-            
         }
     }
 

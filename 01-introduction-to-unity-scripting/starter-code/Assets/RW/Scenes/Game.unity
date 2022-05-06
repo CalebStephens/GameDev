@@ -302,7 +302,7 @@ MonoBehaviour:
   - {fileID: 1292630970}
   - {fileID: 8935506}
   timeBetweenSpawns: 5
-  increment: 0.5
+  increment: 0.25
 --- !u!4 &276030363
 Transform:
   m_ObjectHideFlags: 0
