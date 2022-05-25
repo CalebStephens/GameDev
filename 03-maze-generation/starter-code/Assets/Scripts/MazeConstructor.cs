@@ -13,6 +13,7 @@ public class MazeConstructor : MonoBehaviour
     public float hallWidth{ get; private set; }
     public int goalRow{ get; private set; }
     public int goalCol{ get; private set; }
+    public Node[,] graph;
 
     public int[,] data
     {
@@ -34,6 +35,7 @@ public class MazeConstructor : MonoBehaviour
 
     public void GenerateNewMaze(int sizeRows, int sizeCols)
     {
+           
         DisposeOldMaze();
         if (sizeRows % 2 == 0 && sizeCols % 2 == 0)
             Debug.LogError("Odd numbers work better for dungeon size.");
@@ -41,6 +43,13 @@ public class MazeConstructor : MonoBehaviour
         data = FromDimensions(sizeRows, sizeCols);
         goalRow = data.GetUpperBound(0) - 1;
         goalCol = data.GetUpperBound(1) - 1;
+        
+        graph = new Node[sizeRows,sizeCols];
+
+        for (int i = 0; i < sizeRows; i++)        
+            for (int j = 0; j < sizeCols; j++)            
+                graph[i, j] = data[i,j] == 0 ? new Node(i, j, true) : new Node(i, j, false);
+             
         DisplayMaze();
     }
 

@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private int cols;
     public GameObject playerPrefab;
     public GameObject monsterPrefab;
+    private AIController aIController;
 
     void Awake()
     {
