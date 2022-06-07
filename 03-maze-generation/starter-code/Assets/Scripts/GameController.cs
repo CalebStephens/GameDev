@@ -20,7 +20,7 @@ public class GameController : MonoBehaviour
     
     void Start()
     {
-        constructor.GenerateNewMaze(rows, cols);
+        constructor.GenerateNewMaze(rows, cols, OnTreasureTrigger);
         
         aIController.Graph = constructor.graph;
         aIController.Player = CreatePlayer();
@@ -44,5 +44,11 @@ public class GameController : MonoBehaviour
         GameObject monster = Instantiate(monsterPrefab, monsterPosition, Quaternion.identity);
         monster.tag = "Generated";  
         return monster;  
+    }
+
+    private void OnTreasureTrigger(GameObject trigger, GameObject other)
+    { 
+        Debug.Log("You Won!");
+        aIController.StopAI();
     }
 }
