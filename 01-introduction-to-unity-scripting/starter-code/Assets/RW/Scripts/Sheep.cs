@@ -26,6 +26,9 @@ public class Sheep : MonoBehaviour
     void Update()
     {
         transform.Translate(Vector3.forward * runSpeed * Time.deltaTime);
+        // if(Time.time > 10 && Time.time < 15){
+        //     runSpeed += 1;
+        // }
     }
 
     private void HitByHay()

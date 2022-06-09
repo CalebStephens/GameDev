@@ -20,10 +20,10 @@ public class GameStateManager : MonoBehaviour
     public int sheepDroppedBeforeGameOver; 
     public SheepSpawner sheepSpawner; 
 
-    // Start is called before the first frame update
     void Awake()
     {
         Instance = this;
+        UIManager.Instance.UpdateHighScore();
     }
 
     // Update is called once per frame
@@ -39,20 +39,24 @@ public class GameStateManager : MonoBehaviour
     {
         sheepSaved++;
         UIManager.Instance.UpdateSheepSaved();
+        
     }
 
     private void GameOver()
     {
         sheepSpawner.canSpawn = false; 
         sheepSpawner.DestroyAllSheep();
-        UIManager.Instance.UpdateHighScore();
+        if(sheepSaved > Score.keepScore){
+            highScore = sheepSaved;
+            Score.keepScore = highScore;
+            UIManager.Instance.UpdateHighScore();
+        }
         UIManager.Instance.ShowGameOverWindow(); 
     }
 
     public void HighScore()
     {
-        //highScore = sheepSaved;
-        UIManager.Instance.UpdateHighScore();
+        
     }
 
     public void DroppedSheep()

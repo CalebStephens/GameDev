@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
 
     public void UpdateHighScore()
     {
-        highScoreText.text = GameStateManager.Instance.sheepSaved.ToString();
+        highScoreText.text = Score.keepScore.ToString();
     }
 
     public void ShowGameOverWindow()
