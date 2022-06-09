@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public Text sheepSavedText; 
     public Text sheepDroppedText; 
     public GameObject gameOverWindow; 
+    public Text highScoreText;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -25,6 +27,11 @@ public class UIManager : MonoBehaviour
     public void UpdateSheepDropped() 
     {
         sheepDroppedText.text = GameStateManager.Instance.sheepDropped.ToString();
+    }
+
+    public void UpdateHighScore()
+    {
+        highScoreText.text = GameStateManager.Instance.sheepSaved.ToString();
     }
 
     public void ShowGameOverWindow()

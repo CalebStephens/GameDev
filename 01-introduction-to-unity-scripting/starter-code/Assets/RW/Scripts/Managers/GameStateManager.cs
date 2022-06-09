@@ -10,6 +10,9 @@ public class GameStateManager : MonoBehaviour
 
     [HideInInspector]
     public int sheepSaved; 
+    
+    [HideInInspector]
+    public int highScore; 
 
     [HideInInspector]
     public int sheepDropped; 
@@ -42,7 +45,14 @@ public class GameStateManager : MonoBehaviour
     {
         sheepSpawner.canSpawn = false; 
         sheepSpawner.DestroyAllSheep();
+        UIManager.Instance.UpdateHighScore();
         UIManager.Instance.ShowGameOverWindow(); 
+    }
+
+    public void HighScore()
+    {
+        //highScore = sheepSaved;
+        UIManager.Instance.UpdateHighScore();
     }
 
     public void DroppedSheep()
