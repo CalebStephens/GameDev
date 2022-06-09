@@ -1,17 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+/*Static class which can hold highscore between scenes
+also accessible from anywhere in the program */
 public static class Score
 {
-
+    //static variable holding score
     public static int keepScore;
-   
-    // public void updateScore(int score){
-    //     keepScore = score;
-    // }
-
-    // public int returnScore(){
-    //     return keepScore;
-    // }
 }

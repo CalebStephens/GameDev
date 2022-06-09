@@ -29,6 +29,7 @@ public class UIManager : MonoBehaviour
         sheepDroppedText.text = GameStateManager.Instance.sheepDropped.ToString();
     }
 
+    //update UI to display current highscore
     public void UpdateHighScore()
     {
         highScoreText.text = Score.keepScore.ToString();

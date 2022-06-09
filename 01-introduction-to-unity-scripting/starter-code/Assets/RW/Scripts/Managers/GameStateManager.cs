@@ -10,9 +10,6 @@ public class GameStateManager : MonoBehaviour
 
     [HideInInspector]
     public int sheepSaved; 
-    
-    [HideInInspector]
-    public int highScore; 
 
     [HideInInspector]
     public int sheepDropped; 
@@ -46,17 +43,13 @@ public class GameStateManager : MonoBehaviour
     {
         sheepSpawner.canSpawn = false; 
         sheepSpawner.DestroyAllSheep();
+        /* checks if sheepSaved in current game is higher then previous highscore, 
+        if so then update highscore */
         if(sheepSaved > Score.keepScore){
-            highScore = sheepSaved;
-            Score.keepScore = highScore;
+            Score.keepScore = sheepSaved;
             UIManager.Instance.UpdateHighScore();
         }
         UIManager.Instance.ShowGameOverWindow(); 
-    }
-
-    public void HighScore()
-    {
-        
     }
 
     public void DroppedSheep()
