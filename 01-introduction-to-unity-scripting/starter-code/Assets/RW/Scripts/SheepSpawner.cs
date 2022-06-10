@@ -11,12 +11,17 @@ public class SheepSpawner : MonoBehaviour
     public List<Transform> sheepSpawnPositions = new List<Transform>(); 
     public float timeBetweenSpawns; 
     public float increment;
+    [HideInInspector]
+    public float sheepCount;
+    [HideInInspector]
+    public float speedUp;
 
     private List<GameObject> sheepList = new List<GameObject>(); 
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnRoutine());
+        
     }
 
     // Update is called once per frame
@@ -27,10 +32,18 @@ public class SheepSpawner : MonoBehaviour
 
     private void SpawnSheep()
     {
+        
         Vector3 randomPosition = sheepSpawnPositions[Random.Range(0, sheepSpawnPositions.Count)].position; 
         GameObject sheep = Instantiate(sheepPrefab, randomPosition, sheepPrefab.transform.rotation); 
         sheepList.Add(sheep); 
+        sheep.GetComponent<Sheep>().runSpeed += speedUp;
         sheep.GetComponent<Sheep>().SetSpawner(this); 
+        sheepCount += 1;
+        if(sheepCount % 5 == 0){ 
+            speedUp += 1f;
+            Debug.Log(speedUp);
+        }
+        
     }
 
     private IEnumerator SpawnRoutine() 

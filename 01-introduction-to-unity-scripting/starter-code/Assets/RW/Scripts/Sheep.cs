@@ -19,16 +19,17 @@ public class Sheep : MonoBehaviour
     void Start()
     {
         myCollider = GetComponent<Collider>();
-        myRigidbody = GetComponent<Rigidbody>();    
+        myRigidbody = GetComponent<Rigidbody>();
+       
+  
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.forward * runSpeed * Time.deltaTime);
-        // if(Time.time > 10 && Time.time < 15){
-        //     runSpeed += 1;
-        // }
+        //runSpeed += 0.1f;
+        
     }
 
     private void HitByHay()
@@ -71,6 +72,6 @@ public class Sheep : MonoBehaviour
 
     public void SetSpawner(SheepSpawner spawner)
     {
-        sheepSpawner = spawner;
+        sheepSpawner = spawner;  
     }
 }
