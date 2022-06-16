@@ -60,7 +60,6 @@ public class SpawnEnemy : MonoBehaviour
                     GameObject newEnemy = (GameObject)Instantiate(enemiesList[randNum]);
                     newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
                     enemiesSpawned++;
-                    Debug.Log(randNum);
                 }
             }
             if (enemiesSpawned == waves[currentWave].maxEnemies && GameObject.FindGameObjectWithTag("Enemy") == null)
