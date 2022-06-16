@@ -41,22 +41,18 @@ public class PlaceMonster : MonoBehaviour
 
     void OnMouseUp()
     {
-        Debug.Log("mouse up");
         if (CanPlaceMonster())
         {
-            Debug.Log("placed");
             monster = (GameObject)Instantiate(monsterPrefab, transform.position, Quaternion.identity);
-            
             AudioSource audioSource = gameObject.GetComponent<AudioSource>();
             audioSource.PlayOneShot(audioSource.clip);
             gameManager.Gold -= monster.GetComponent<MonsterData>().CurrentLevel.cost;
         }else if (CanUpgradeMonster())
         {
-            Debug.Log("upgrade");
-        monster.GetComponent<MonsterData>().IncreaseLevel();
-        AudioSource audioSource = gameObject.GetComponent<AudioSource>();
-        audioSource.PlayOneShot(audioSource.clip);
-        gameManager.Gold -= monster.GetComponent<MonsterData>().CurrentLevel.cost;
+            monster.GetComponent<MonsterData>().IncreaseLevel();
+            AudioSource audioSource = gameObject.GetComponent<AudioSource>();
+            audioSource.PlayOneShot(audioSource.clip);
+            gameManager.Gold -= monster.GetComponent<MonsterData>().CurrentLevel.cost;
         }
     }
 }

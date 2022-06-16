@@ -25,6 +25,8 @@ public class SpawnEnemy : MonoBehaviour
 
     private float lastSpawnTime;
     private int enemiesSpawned = 0;
+
+    private int randNum;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,16 +49,18 @@ public class SpawnEnemy : MonoBehaviour
     (enemiesSpawned < waves[currentWave].maxEnemies))
             {
                 //Spawns second type of enemy after the third wave 
-                if(currentWave < 3){
+                if(currentWave < 2){
                     lastSpawnTime = Time.time;
                     GameObject newEnemy = (GameObject)Instantiate(enemiesList[0]);
                     newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
                     enemiesSpawned++;
                 }else{
+                    randNum = Random.Range(0,enemiesList.Count);
                     lastSpawnTime = Time.time;
-                    GameObject newEnemy = (GameObject)Instantiate(enemiesList[1]);
+                    GameObject newEnemy = (GameObject)Instantiate(enemiesList[randNum]);
                     newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
                     enemiesSpawned++;
+                    Debug.Log(randNum);
                 }
             }
             if (enemiesSpawned == waves[currentWave].maxEnemies && GameObject.FindGameObjectWithTag("Enemy") == null)
