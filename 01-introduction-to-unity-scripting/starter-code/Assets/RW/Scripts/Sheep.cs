@@ -1,10 +1,21 @@
+/* Program name: Introduction To Unity Scripting
+   Project file name: Sheep.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Instatiate each sheep and its characteristics
+   Description: Each sheep spawned will be given characteristics allowing it to act appropriately.
+   Known Bugs:            
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Sheep : MonoBehaviour
 {
-
     public float runSpeed; 
     public float gotHayDestroyDelay; 
     private bool hitByHay; 
@@ -15,21 +26,18 @@ public class Sheep : MonoBehaviour
     private SheepSpawner sheepSpawner;
     public float heartOffset; 
     public GameObject heartPrefab; 
+
     // Start is called before the first frame update
     void Start()
     {
         myCollider = GetComponent<Collider>();
         myRigidbody = GetComponent<Rigidbody>();
-       
-  
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.forward * runSpeed * Time.deltaTime);
-        //runSpeed += 0.1f;
-        
     }
 
     private void HitByHay()
@@ -61,7 +69,6 @@ public class Sheep : MonoBehaviour
 
     private void Drop()
     {
-        //sheepSpawner.RemoveSheepFromList(gameObject);
         dropped = true;
         myRigidbody.isKinematic = false; 
         myCollider.isTrigger = false; 
