@@ -1,3 +1,15 @@
+/* Program name: Maze Generation
+   Project file name: MazeConstructor.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Everything relating to the maze from, creation, disposing and displaying
+   Description: generates a random maze each game within a set size, displays the maze then disposes of maze when finished.
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using UnityEngine;
 
 public class MazeConstructor : MonoBehaviour

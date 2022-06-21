@@ -1,3 +1,15 @@
+/* Program name: Maze Generation
+   Project file name: GameController.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: creates everything needed for the gameplay
+   Description: instantiates player, monster and trigger for when player reaches treasure
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System;
 using UnityEngine;
 

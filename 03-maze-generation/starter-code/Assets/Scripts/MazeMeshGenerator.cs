@@ -1,3 +1,15 @@
+/* Program name: Maze Generation
+   Project file name: MazeMeshGenerator
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: creates the looks of the maze
+   Description: sets the width and length of each wall and what they look like to the user
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections.Generic;
 using UnityEngine;
 

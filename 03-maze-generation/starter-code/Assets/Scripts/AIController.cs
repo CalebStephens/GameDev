@@ -1,3 +1,15 @@
+/* Program name: Maze Generation
+   Project file name: AIController.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Crontrol the AI monster
+   Description: moves the ai monster around the map and towards the player
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

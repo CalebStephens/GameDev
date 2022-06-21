@@ -1,3 +1,15 @@
+/* Program name: Maze Generation
+   Project file name: Node.CS
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Representation of our maze data as nodes
+   Description: Figure out if the node is walkable or not for player and monster movement
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
