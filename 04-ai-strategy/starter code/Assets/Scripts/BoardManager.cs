@@ -1,4 +1,16 @@
-﻿using System.Collections;
+﻿/* Program name: AI Stratergy
+   Project file name: BoardManager.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Create board for chess game
+   Description: On awake create instance of board setting it up for game
+   Known Bugs:           
+   Additional Features: 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

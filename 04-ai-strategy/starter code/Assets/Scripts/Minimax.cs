@@ -1,3 +1,15 @@
+/* Program name: AI Stratergy
+   Project file name: Minimax.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: finds the best move to take
+   Description: uses alpha beta pruning to find the best move to take in the quickest amount of time
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

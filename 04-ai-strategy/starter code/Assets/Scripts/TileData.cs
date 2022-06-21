@@ -1,4 +1,16 @@
-﻿using System.Collections;
+﻿/* Program name: AI Stratergy
+   Project file name: TileData.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: tile data for each tile on the board
+   Description: returns and holds what piece is currently on each tile on the board
+   Known Bugs:           
+   Additional Features: 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

@@ -1,4 +1,15 @@
-﻿using System.Collections;
+﻿/* Program name: AI Stratergy
+   Project file name: MoveHeuristic.cs
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: sets weight of each piece 
+   Description: wieght shows how important each piece is to the gameplay
+   Known Bugs:           
+   Additional Features: 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

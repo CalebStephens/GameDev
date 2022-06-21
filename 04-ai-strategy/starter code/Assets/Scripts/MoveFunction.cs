@@ -1,4 +1,16 @@
-﻿using System.Collections;
+﻿/* Program name: AI Stratergy
+   Project file name: MoveFunction.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Finds the move each piece can make
+   Description: finds what piece is being moved then checks what moves can be made off of piece type and available board space
+   Known Bugs:           
+   Additional Features: 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

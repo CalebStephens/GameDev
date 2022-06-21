@@ -1,4 +1,16 @@
-﻿using System.Collections;
+﻿/* Program name: AI Stratergy
+   Project file name: ChessPiece.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Movement for each piece
+   Description: finds what type the piece being moved is and where it can move to
+   Known Bugs:           
+   Additional Features: 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

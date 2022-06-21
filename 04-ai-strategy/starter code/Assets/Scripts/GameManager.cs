@@ -1,4 +1,16 @@
-﻿using System.Collections;
+﻿/* Program name: AI Stratergy
+   Project file name: GameManager.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: acts as the controller for the gameplay
+   Description: Makes the moves, highlights the move its going to make, swaps pieces and checks if piece is dead
+   Known Bugs:           
+   Additional Features: 
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
