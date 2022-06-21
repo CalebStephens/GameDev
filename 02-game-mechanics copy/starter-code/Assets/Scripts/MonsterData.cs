@@ -1,3 +1,15 @@
+/* Program name: Game Mechanics
+   Project file name: MonsterData.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Controller for game levels
+   Description: gets and sets current game level, increases game level.
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +28,7 @@ public class MonsterData : MonoBehaviour
 {
     public List<MonsterLevel> levels;
     private MonsterLevel currentLevel;
-    // Start is called before the first frame update
     
-
     void OnEnable()
     {
     CurrentLevel = levels[0];

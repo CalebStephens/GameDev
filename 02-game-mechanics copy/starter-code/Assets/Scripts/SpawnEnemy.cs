@@ -1,3 +1,15 @@
+/* Program name: Game Mechanics
+   Project file name: BulletBehaviour.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Controls spawning enemy and what type of enemy
+   Description: finds what wave the player is on and what type of enemy needs to spawn along with how many enemies to spawn
+   Known Bugs:           
+   Additional Features: Spawn a mix of harder and normal enemies at round 3
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -48,13 +60,14 @@ public class SpawnEnemy : MonoBehaviour
             if (((enemiesSpawned == 0 && timeInterval > timeBetweenWaves) || (enemiesSpawned != 0 && timeInterval > spawnInterval)) && 
     (enemiesSpawned < waves[currentWave].maxEnemies))
             {
-                //Spawns second type of enemy after the third wave 
+                //Spawns second type of enemy at the 3rd wave 
                 if(currentWave < 2){
                     lastSpawnTime = Time.time;
                     GameObject newEnemy = (GameObject)Instantiate(enemiesList[0]);
                     newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
                     enemiesSpawned++;
                 }else{
+                    //new random number each time before an enemy is spawned to determine which enemy is spawned. Works if someone adds a new enemy
                     randNum = Random.Range(0,enemiesList.Count);
                     lastSpawnTime = Time.time;
                     GameObject newEnemy = (GameObject)Instantiate(enemiesList[randNum]);

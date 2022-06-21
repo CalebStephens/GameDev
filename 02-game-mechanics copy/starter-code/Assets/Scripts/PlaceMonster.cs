@@ -1,3 +1,15 @@
+/* Program name: Game Mechanics
+   Project file name: PlaceMonster.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Allows user to place and upgrade monster to defend base
+   Description: when an openspot is clicked places monster but also checks if moster is placed then upgrade current monster, and if user has enough coins.
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +24,6 @@ public class PlaceMonster : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.Find("GameManager").GetComponent<GameManagerBehaviour>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     private bool CanPlaceMonster()

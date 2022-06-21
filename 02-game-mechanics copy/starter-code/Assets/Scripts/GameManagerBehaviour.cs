@@ -1,3 +1,15 @@
+/* Program name: Game Mechanics
+   Project file name: GameManagerBehaviour.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Game manager controls UI and health, money, waves etc.
+   Description: Sets up initial player values at start of game and continues to update them through gameplay
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -71,17 +83,12 @@ public class GameManagerBehaviour : MonoBehaviour
             waveLabel.text = "WAVE: " + (wave + 1);
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
         Gold = 1000;
         Wave = 0;
         Health = 5;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

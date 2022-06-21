@@ -1,3 +1,15 @@
+/* Program name: Game Mechanics
+   Project file name: MoveEnemy.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Move enemy towards player base
+   Description: Move enemy along waypointss towards players home base and controls when enemy reaches homebase.
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +21,7 @@ public class MoveEnemy : MonoBehaviour
     private int currentWaypoint = 0;
     private float lastWaypointSwitchTime;
     public float speed = 1.0f;
+
     // Start is called before the first frame update
     void Start()
     {

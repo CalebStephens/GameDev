@@ -1,3 +1,15 @@
+/* Program name: Game Mechanics
+   Project file name: BulletBehaviour.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Behaviour of each bullet
+   Description: controls bullet speed, direction and what happens when a bullet collides with enemy
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

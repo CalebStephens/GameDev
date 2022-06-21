@@ -28,6 +28,18 @@
  * THE SOFTWARE.
  */
 
+/* Program name: Game Mechanics
+   Project file name: GameOver.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Game Over behaviour
+   Description: Loads scene when game is over in order to restart
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;

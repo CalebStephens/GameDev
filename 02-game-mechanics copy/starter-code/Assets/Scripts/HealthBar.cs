@@ -1,3 +1,15 @@
+/* Program name: Game Mechanics
+   Project file name: BulletBehaviour.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Health bar for enemys
+   Description: displays enemy health above each individual enemy
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

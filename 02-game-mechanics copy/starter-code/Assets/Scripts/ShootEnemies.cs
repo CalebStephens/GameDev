@@ -1,3 +1,15 @@
+/* Program name: Game Mechanics
+   Project file name: ShootEnemies.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Behaviour for shooting enemies
+   Description: Finds if enemies are in range to fire in then removes them from list when not, also shoots bullet
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -27,7 +27,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
-
+ 
+ /* Program name: Game Mechanics
+   Project file name: CameraShake.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Shakes game scene when called
+   Description: if an enemy reaches your base make the camera effect of a shake
+   Known Bugs:           
+   Additional Features: 
+*/
 using UnityEngine;
 using System.Collections;
 
