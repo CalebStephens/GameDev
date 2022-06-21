@@ -1,3 +1,15 @@
+/* Program name: Introduction To Unity Scripting
+   Project file name: UIManager.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Updates UI
+   Description: Changes the UI text when needed
+   Known Bugs:           
+   Additional Features: Highscore on UI
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

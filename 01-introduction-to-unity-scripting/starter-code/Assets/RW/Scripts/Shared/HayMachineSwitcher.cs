@@ -1,3 +1,14 @@
+/* Program name: Introduction To Unity Scripting
+   Project file name: HayMachineSwitcher.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Allow user to change colour of their hay machine
+   Description: uses an enum called HayMachineColour, then uses an index on the users click to find which colour they have choosen.
+   Known Bugs:            
+   Additional Features: 
+*/
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +30,6 @@ public class HayMachineSwitcher : MonoBehaviour, IPointerClickHandler
 
         GameSettings.hayMachineColor = (HayMachineColor)selectedIndex; 
 
-        // 5
         switch (GameSettings.hayMachineColor)
         {
             case HayMachineColor.Blue:

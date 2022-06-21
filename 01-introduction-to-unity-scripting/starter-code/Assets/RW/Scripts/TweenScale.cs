@@ -1,3 +1,15 @@
+/* Program name: Introduction To Unity Scripting
+   Project file name: TweenScale.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Add an animation to a prefab
+   Description: Will 'tween' (or animate) between two sizes, essentially scaling down the heart over time
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

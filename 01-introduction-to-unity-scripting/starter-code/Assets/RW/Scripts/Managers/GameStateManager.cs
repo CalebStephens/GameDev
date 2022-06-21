@@ -1,3 +1,15 @@
+/* Program name: Introduction To Unity Scripting
+   Project file name: GameStateManager.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Acts as the game controller
+   Description: controlls the UI and when the game is over
+   Known Bugs:           
+   Additional Features: HighScore saving
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,15 @@
+/* Program name: Introduction To Unity Scripting
+   Project file name: SoundManager.cs
+   Author: Caleb Stephens
+   Date: 21/6/22
+   Language: C#
+   Platform: Mac OS
+   Purpose: Controls sound for the game
+   Description: Methods are called on from triggers in the game which play appropriate sounds
+   Known Bugs:           
+   Additional Features: 
+*/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,17 +24,10 @@ public class SoundManager : MonoBehaviour
 
     private Vector3 cameraPosition; 
 
-    // Start is called before the first frame update
     void Awake()
     {
         Instance = this; 
         cameraPosition = Camera.main.transform.position;    
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void PlaySound(AudioClip clip)
