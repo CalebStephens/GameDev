@@ -12,6 +12,8 @@
 
 using System;
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 [RequireComponent(typeof(MazeConstructor))]           
 
@@ -23,6 +25,7 @@ public class GameController : MonoBehaviour
     public GameObject playerPrefab;
     public GameObject monsterPrefab;
     private AIController aIController;
+
 
     void Awake()
     {
@@ -39,6 +42,34 @@ public class GameController : MonoBehaviour
         aIController.Monster = CreateMonster(); 
         aIController.HallWidth = constructor.hallWidth;         
         aIController.StartAI();
+    }
+
+    void Update()
+    {
+        
+        if(Input.GetKeyDown("f"))
+        {
+            Hint();
+            
+        }
+    }
+    
+    public void Hint(){
+        int playerCol = (int)Mathf.Round(aIController.Player.transform.position.x / constructor.hallWidth);
+        int playerRow = (int)Mathf.Round(aIController.Player.transform.position.z / constructor.hallWidth);
+
+        int treasureCol = constructor.goalCol;
+        int treasureRow = constructor.goalRow;
+
+        List<Node> treasurePath = aIController.FindPath(playerRow, playerCol, treasureRow, treasureCol);
+
+        foreach(Node node in treasurePath)
+        {
+            GameObject orb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            orb.transform.position = new Vector3(node.y * constructor.hallWidth, 1, node.x * constructor.hallWidth);
+            orb.GetComponent<SphereCollider>().enabled = false;
+            orb.tag = "hint";
+        }
     }
 
     private GameObject CreatePlayer()
