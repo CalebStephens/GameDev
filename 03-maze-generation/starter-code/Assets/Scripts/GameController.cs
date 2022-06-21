@@ -26,6 +26,8 @@ public class GameController : MonoBehaviour
     public GameObject monsterPrefab;
     private AIController aIController;
 
+    const int ORBHIEGHT = 1;
+
 
     void Awake()
     {
@@ -50,27 +52,37 @@ public class GameController : MonoBehaviour
         if(Input.GetKeyDown("f"))
         {
             Hint();
-            
         }
     }
     
-    public void Hint(){
+    public void Hint()
+    {
         int playerCol = (int)Mathf.Round(aIController.Player.transform.position.x / constructor.hallWidth);
         int playerRow = (int)Mathf.Round(aIController.Player.transform.position.z / constructor.hallWidth);
 
         int treasureCol = constructor.goalCol;
         int treasureRow = constructor.goalRow;
-
+        DeleteHint();
         List<Node> treasurePath = aIController.FindPath(playerRow, playerCol, treasureRow, treasureCol);
 
         foreach(Node node in treasurePath)
         {
             GameObject orb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-            orb.transform.position = new Vector3(node.y * constructor.hallWidth, 1, node.x * constructor.hallWidth);
+            orb.transform.position = new Vector3(node.y * constructor.hallWidth, ORBHIEGHT, node.x * constructor.hallWidth);
             orb.GetComponent<SphereCollider>().enabled = false;
             orb.tag = "hint";
         }
     }
+
+    public void DeleteHint()
+    {
+        GameObject[] allOrbs = GameObject.FindGameObjectsWithTag("hint");
+        foreach(GameObject orb in allOrbs)
+        {
+            Destroy(orb);
+        }
+    }
+
 
     private GameObject CreatePlayer()
     {
