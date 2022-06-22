@@ -7,7 +7,7 @@
    Purpose: creates everything needed for the gameplay
    Description: instantiates player, monster and trigger for when player reaches treasure
    Known Bugs:           
-   Additional Features: 
+   Additional Features: Press "F" to display path of hints
 */
 
 using System;
@@ -26,6 +26,7 @@ public class GameController : MonoBehaviour
     public GameObject monsterPrefab;
     private AIController aIController;
 
+    //hieght for orbs when the display
     const int ORBHIEGHT = 1;
 
 
@@ -48,13 +49,14 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-        
+        //when user presses "f" call hint
         if(Input.GetKeyDown("f"))
         {
             Hint();
         }
     }
     
+    // displays an orb path from the players current position to the treasure
     public void Hint()
     {
         int playerCol = (int)Mathf.Round(aIController.Player.transform.position.x / constructor.hallWidth);
@@ -62,9 +64,14 @@ public class GameController : MonoBehaviour
 
         int treasureCol = constructor.goalCol;
         int treasureRow = constructor.goalRow;
+
+        //deletes previous path created before creating new path
         DeleteHint();
+
+        //path of nodes from current player position to treasure
         List<Node> treasurePath = aIController.FindPath(playerRow, playerCol, treasureRow, treasureCol);
 
+        // creates an orb on each node towards treasure, allows player to walk through orb and gives orb the tag of hint to allow deletion
         foreach(Node node in treasurePath)
         {
             GameObject orb = GameObject.CreatePrimitive(PrimitiveType.Sphere);
@@ -73,7 +80,8 @@ public class GameController : MonoBehaviour
             orb.tag = "hint";
         }
     }
-
+    
+    //finds all objects with tag of "hint" and deletes, called before creating new path
     public void DeleteHint()
     {
         GameObject[] allOrbs = GameObject.FindGameObjectsWithTag("hint");
