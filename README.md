@@ -25,4 +25,4 @@ Advanced Features completed using course material provided and ultering for each
 
   Advanced Features: Press "F" to show a pathway of orbs towards the treasure.
   
-## Game 4: AI Stratergy. 
+## Game 4: AI Strategy. 
